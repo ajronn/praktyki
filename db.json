@@ -1,9 +1,17 @@
 {
-  "products": [
-    { "id": 1, "title": "Nvidia" , "type": "graphicscard", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "price": "100"},
-    { "id": 2, "title": "Amd Radeon", "type": "graphicscard", "desc": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.", "price": "200" },
-    { "id": 3, "title": "Nokia", "type": "tele" , "desc": "It has survived not only five centuries, but also the leap into electronic typesetting.", "price": "300"},
-    { "id": 4, "title": "Asus" , "type": "laptop", "desc": "Lorem Ipsum passages, and more recently with desktop publishing software.", "price": "400"},
-    { "id": 5, "title": "Lenovo" , "type": "laptop", "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking.", "price": "500"}
-  ]
+"oferta":
+{
+	"id":"115",
+	"thumb":"084354_28082019_1.jpg",
+	"name":"Migda\u0142y naturalne",
+	"rodzajeCount":1,
+	"seolink":"migdaly-naturalne",
+	"price":"22.49",
+	"priceMin":"22.49",
+	"priceBruttoMin":"22.49",
+	"promotion":"0",
+	"cat":"details",
+	"typId":"18070",
+	"oferta_tygodnia_data":"1594301323"
+}
 }
