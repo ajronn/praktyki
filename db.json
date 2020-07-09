@@ -1,6 +1,7 @@
 {
-"oferta":
-{
+"api":[{
+	{"oferta":
+[{
 	"id":"115",
 	"thumb":"084354_28082019_1.jpg",
 	"name":"Migda\u0142y naturalne",
@@ -13,5 +14,7 @@
 	"cat":"details",
 	"typId":"18070",
 	"oferta_tygodnia_data":"1594301323"
-}
+}]}
+
+}]
 }
