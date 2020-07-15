@@ -1,17 +1,21 @@
 {
-"oferta":
-{
-	"id":"115",
-	"thumb":"084354_28082019_1.jpg",
-	"name":"Migda\u0142y naturalne",
-	"rodzajeCount":1,
-	"seolink":"migdaly-naturalne",
-	"price":"22.49",
-	"priceMin":"22.49",
-	"priceBruttoMin":"22.49",
-	"promotion":"0",
-	"cat":"details",
-	"typId":"18070",
-	"oferta_tygodnia_data":"1594301323"
-}
+	"aukcje":
+	{
+		"id":"1",
+		"price":"100",
+		"title":"Nokia 3310",
+		"description":"Niezniszczalny telefon, dzwoni, wbija gwozdzie, zbija terakote",
+	},
+	{
+		"id":"2",
+		"price":"200",
+		"title":"Toster",
+		"description":"Przypieka chleb tylko na czarno",
+	},
+	{
+		"id":"3",
+		"price":"300",
+		"title":"Bulbulator",
+		"description":"Robi bul bul",
+	}
 }
