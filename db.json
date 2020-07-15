@@ -1,5 +1,5 @@
 {
-	"aukcje":{
+	"aukcje":[{
 	{
 		"id":"1",
 		"price":"100",
@@ -17,5 +17,5 @@
 		"price":"300",
 		"title":"Bulbulator",
 		"description":"Robi bul bul",
-	}}
+	}}]
 }
