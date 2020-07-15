@@ -1,21 +1,10 @@
 {
-	"aukcje":[
-	{
-		"id":"1",
-		"price":"100",
-		"title":"Nokia 3310",
-		"description":"Niezniszczalny telefon, dzwoni, wbija gwozdzie, zbija terakote",
-	},
-	{
-		"id":"2",
-		"price":"200",
-		"title":"Toster",
-		"description":"Przypieka chleb tylko na czarno",
-	},
+	"aukcje":
+
 	{
 		"id":"3",
 		"price":"300",
 		"title":"Bulbulator",
 		"description":"Robi bul bul",
-	}]
+	}
 }
