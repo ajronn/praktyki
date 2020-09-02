@@ -2,5 +2,3 @@ Siema
 to nowy plik testowy
 można tu coś pozmieniać
 testuje rebase commitów
-
-zmiana nr 1
