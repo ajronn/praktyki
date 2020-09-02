@@ -4,4 +4,3 @@ można tu coś pozmieniać
 testuje rebase commitów
 
 zmiana nr 1
-zmiana nr 2
