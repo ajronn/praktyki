@@ -1,0 +1,26 @@
+button {
+    margin: 0 5px;
+    padding: 0 10px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0 7px #888888;
+    font-weight: 700;
+}
+
+button:active {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+    box-shadow: 0 4px #888888;
+}
+
+.light {
+    background-color: rgb(214, 214, 214);
+}
+
+.dark {
+    background-color: rgb(71, 71, 71);
+    color: white;
+}

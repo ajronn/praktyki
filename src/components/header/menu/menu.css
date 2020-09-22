@@ -1,0 +1,31 @@
+.menuTrigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 23px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    padding-bottom: 2px;
+    position: relative;
+}
+
+.menu {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    visibility: hidden;
+    top: 80px;
+    left: 0;
+    position: absolute;
+    padding-left: 30px;
+    opacity: 0;
+    transition: opacity 400ms, visibility 400ms;
+}
+
+.open {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
