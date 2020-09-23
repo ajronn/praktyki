@@ -13,10 +13,11 @@ const Menu = () => {
 
     return (
         <div>
-            <div className='menuTrigger' onClick={toggleMenu}>&#9660;</div>
+            <div className='menuTrigger' onClick={toggleMenu}>&bull;&bull;&bull;</div>
             <div className={open ? 'menu open' : 'menu'}>
                 <Link to='/'><Button>Home</Button></Link>
                 <Link to='/form'><Button>Form</Button></Link>
+                <Link to='/teams'><Button>Teams</Button></Link>
             </div>
         </div>
     )

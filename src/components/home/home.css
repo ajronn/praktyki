@@ -1,3 +1,17 @@
 .home {
     color: black;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding-top: 100px;
+}
+
+table,
+th {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th {
+    padding: 5px;
 }

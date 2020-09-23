@@ -2,11 +2,17 @@ import React, { useState } from 'react'
 
 import { Button } from '../../ui'
 
+import { Player } from '../main/Main'
+
 import './addform.css'
 
-const AddForm = () => {
-    const [player, setPlayer] = useState({ name: '', position: '', skill: '' });
-    let status = [false, false, false]
+interface Props {
+    addPlayer: (e: Player) => void;
+}
+
+const AddForm = ({ addPlayer }: Props) => {
+    const [player, setPlayer] = useState({ name: '', position: '', skill: 0 });
+    let status = [false, false, false];
 
     const setName = (e: string) => {
         let obj = {
@@ -26,7 +32,7 @@ const AddForm = () => {
         setPlayer(obj);
     }
 
-    const setSkill = (e: string) => {
+    const setSkill = (e: number) => {
         let obj = {
             name: player.name,
             position: player.position,
@@ -36,19 +42,11 @@ const AddForm = () => {
     }
 
     const validate = () => {
-        if (player.name.length < 2) {
-            status[0] = false;
-        } else {
-            status[0] = true;
-        }
+        player.name.length < 2 ? status[0] = false : status[0] = true;
+        player.position === '' ? status[1] = false : status[1] = true;
 
-        if (player.position === '') {
-            status[1] = false;
-        } else {
-            status[1] = true;
-        }
-
-        if (!parseInt(player.skill) || parseInt(player.skill) < 1 || parseInt(player.skill) > 10) {
+        if (player.skill < 1 ||
+            player.skill > 10) {
             status[2] = false;
         } else {
             status[2] = true;
@@ -62,7 +60,15 @@ const AddForm = () => {
     }
 
     const send = () => {
-        if (!validate()) return;
+        if (!validate()) {
+            let err = ''
+            if (!status[0]) err += '>Name\n';
+            if (!status[1]) err += '>Position\n';
+            if (!status[2]) err += '>Skill lvl\n';
+            alert(err + "   is invalid")
+            return;
+        }
+        addPlayer(player);
     }
 
     return (
@@ -79,7 +85,7 @@ const AddForm = () => {
 
                 <fieldset>
                     <select onChange={(e) => setPosition(e.target.value)}>
-                        <option value="" disabled selected>position</option>
+                        <option value="">position</option>
                         <option value="goalkeeper">goalkeeper</option>
                         <option value="defender">defender</option>
                         <option value="midfielder">midfielder</option>
@@ -93,14 +99,14 @@ const AddForm = () => {
                 </fieldset>
 
                 <fieldset>
-                    <input type='text' placeholder='skill lvl [1-10]' onChange={(e) => setSkill(e.target.value)} />
+                    <input type='number' placeholder='skill lvl [1-10]' onChange={(e) => setSkill(parseInt(e.target.value))} />
                     <label><img
                         width={23}
                         src="https://www.flaticon.com/svg/static/icons/svg/3103/3103277.svg" />
                     </label>
                 </fieldset>
+                <Button theme='dark' onClick={send}>Add player</Button>
             </form>
-            <Button theme='dark' onClick={() => send()}>Add player</Button>
         </div>
     )
 }

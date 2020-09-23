@@ -1,9 +1,13 @@
 .form {
     width: 600px;
-    height: 200px;
+    height: auto;
     background-color: rgb(173, 173, 173);
     margin: 100px auto 0 auto;
     text-align: center;
+}
+
+form {
+    padding: 20px 0;
 }
 
 input,
