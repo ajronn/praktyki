@@ -1,0 +1,40 @@
+.teamsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "tables teams";
+    margin-top: 70px;
+}
+
+.tables {
+    grid-area: "tables";
+    border-right: 1px solid black;
+}
+
+.teams {
+    grid-area: "teams";
+    border-left: 1px solid black;
+}
+
+.teamsContainer button {
+    width: 50%;
+    margin: 0 25%;
+    margin-bottom: 10px;
+}
+
+.teams table {
+    float: left;
+}
+
+.tables table {
+    float: left;
+}
+
+.teamsContainer input,
+.teamsContainer button {
+    float: none;
+}
+
+.teamsContainer input {
+    width: 100px;
+    margin-left: 5px;
+}

@@ -11,11 +11,12 @@ interface Props {
 }
 
 const AddForm = ({ addPlayer }: Props) => {
-    const [player, setPlayer] = useState({ name: '', position: '', skill: 0 });
+    const [player, setPlayer] = useState({ id: 0, name: '', position: '', skill: 0 });
     let status = [false, false, false];
 
     const setName = (e: string) => {
         let obj = {
+            id: player.id,
             name: e,
             position: player.position,
             skill: player.skill
@@ -25,6 +26,7 @@ const AddForm = ({ addPlayer }: Props) => {
 
     const setPosition = (e: string) => {
         let obj = {
+            id: player.id,
             name: player.name,
             position: e,
             skill: player.skill
@@ -34,6 +36,7 @@ const AddForm = ({ addPlayer }: Props) => {
 
     const setSkill = (e: number) => {
         let obj = {
+            id: player.id,
             name: player.name,
             position: player.position,
             skill: e
@@ -62,9 +65,9 @@ const AddForm = ({ addPlayer }: Props) => {
     const send = () => {
         if (!validate()) {
             let err = ''
-            if (!status[0]) err += '>Name\n';
-            if (!status[1]) err += '>Position\n';
-            if (!status[2]) err += '>Skill lvl\n';
+            if (!status[0]) err += '>Name (min 2 signs)\n';
+            if (!status[1]) err += '>Position (choose position)\n';
+            if (!status[2]) err += '>Skill lvl (range 1-10)\n';
             alert(err + "   is invalid")
             return;
         }
@@ -99,10 +102,11 @@ const AddForm = ({ addPlayer }: Props) => {
                 </fieldset>
 
                 <fieldset>
-                    <input type='number' placeholder='skill lvl [1-10]' onChange={(e) => setSkill(parseInt(e.target.value))} />
-                    <label><img
-                        width={23}
-                        src="https://www.flaticon.com/svg/static/icons/svg/3103/3103277.svg" />
+                    <input min='1' max='10' type='number' placeholder='skill lvl [1-10]' onChange={(e) => setSkill(parseInt(e.target.value))} />
+                    <label>
+                        <img
+                            width={23}
+                            src="https://www.flaticon.com/svg/static/icons/svg/3103/3103277.svg" />
                     </label>
                 </fieldset>
                 <Button theme='dark' onClick={send}>Add player</Button>

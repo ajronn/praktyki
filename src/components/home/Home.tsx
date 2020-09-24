@@ -24,17 +24,6 @@ const Home = ({ storage }: Props) => {
 
     return (
         <div className='home'>
-            {/* <table>
-                <tr>
-                    <th colSpan={3} >Players</th>
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Skill</th>
-                </tr>
-                {data}
-            </table> */}
             <Table data={storage} header="Players" />
         </div>
     )

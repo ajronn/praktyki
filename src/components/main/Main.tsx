@@ -9,6 +9,7 @@ import {
 import { Header, Home, AddForm, Teams } from '..';
 
 export interface Player {
+    id: number;
     name: string;
     position: string;
     skill: number;
@@ -23,7 +24,7 @@ const Main = () => {
 
         if (data !== null) {
             JSON.parse(data).map((e: Player) => {
-                players.push({ name: e.name, position: e.position, skill: e.skill });
+                players.push({ id: e.id, name: e.name, position: e.position, skill: e.skill });
             })
             setStorage([...players]);
             return;
@@ -35,7 +36,7 @@ const Main = () => {
         for (let i = 0; i < 200; i++) {
             let name = names[Math.floor(Math.random() * Math.floor(8))];
             let position = positions[Math.floor(Math.random() * Math.floor(4))];
-            let player: Player = { name: name, position: position, skill: (Math.floor(Math.random() * Math.floor(10)) + 1) };
+            let player: Player = { id: i, name: name, position: position, skill: (Math.floor(Math.random() * Math.floor(10)) + 1) };
             players.push(player);
         }
         localStorage.setItem('data', JSON.stringify([...players]));
@@ -43,9 +44,10 @@ const Main = () => {
     }, [])
 
     const addPlayer = (player: Player) => {
-        const data = JSON.stringify([player, ...storage]);
+        player.id = storage[storage.length - 1].id + 1;
+        const data = JSON.stringify([...storage, player]);
         localStorage.setItem('data', data);
-        setStorage([player, ...storage]);
+        setStorage([...storage, player]);
     }
 
     return (
