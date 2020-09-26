@@ -11,49 +11,17 @@ interface Props {
 }
 
 const AddForm = ({ addPlayer }: Props) => {
-    const [player, setPlayer] = useState({ id: 0, name: '', position: '', skill: 0 });
+    let player = { id: 0, name: '', position: '', skill: 0 };
     let status = [false, false, false];
 
-    const setName = (e: string) => {
-        let obj = {
-            id: player.id,
-            name: e,
-            position: player.position,
-            skill: player.skill
-        };
-        setPlayer(obj);
-    }
-
-    const setPosition = (e: string) => {
-        let obj = {
-            id: player.id,
-            name: player.name,
-            position: e,
-            skill: player.skill
-        };
-        setPlayer(obj);
-    }
-
-    const setSkill = (e: number) => {
-        let obj = {
-            id: player.id,
-            name: player.name,
-            position: player.position,
-            skill: e
-        };
-        setPlayer(obj);
-    }
+    const setName = (e: string) => player.name = e;
+    const setPosition = (e: string) => player.position = e;
+    const setSkill = (e: number) => player.skill = e;
 
     const validate = () => {
         player.name.length < 2 ? status[0] = false : status[0] = true;
         player.position === '' ? status[1] = false : status[1] = true;
-
-        if (player.skill < 1 ||
-            player.skill > 10) {
-            status[2] = false;
-        } else {
-            status[2] = true;
-        }
+        player.skill < 1 || player.skill > 10 ? status[2] = false : status[2] = true;
 
         if (status[0] === false || status[1] === false || status[2] === false) {
             return false;
