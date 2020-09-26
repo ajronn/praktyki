@@ -68,7 +68,7 @@ const Table = ({ data, header = '' }: Props) => {
 
     return (
         data.length === 0
-            ? <p>no data</p>
+            ? ""
             :
             <table>
                 <tbody>
