@@ -17,6 +17,10 @@ const Teams = ({ storage }: Props) => {
     const [forwards, setForwards] = useState([]);
     const [teams, setTeams] = useState([]);
     const [reset, setReset] = useState(false)
+    const GOALKEEPERS_NUMBER = 1;
+    const DEFENDERS_NUMBER = 3;
+    const MIDFIELDERS_NUMBER = 2;
+    const FORWARDS_NUMBER = 1;
 
     useEffect(() => {
         setGoalkeepers(selectSortPlayers('goalkeeper'));
@@ -34,13 +38,14 @@ const Teams = ({ storage }: Props) => {
             return;
         }
 
-        const goalkeepersArray = selectPlayers(goalkeepers, 1);
+        const goalkeepersArray = selectPlayers(goalkeepers, GOALKEEPERS_NUMBER);
+        const defendersArray = selectPlayers(defenders, DEFENDERS_NUMBER);
+        const midfieldersArray = selectPlayers(midfielders, MIDFIELDERS_NUMBER);
+        const forwardsArray = selectPlayers(forwards, FORWARDS_NUMBER);
+
         setGoalkeepers(filterPlayers(goalkeepers, goalkeepersArray));
-        const defendersArray = selectPlayers(defenders, 3);
         setDefenders(filterPlayers(defenders, defendersArray));
-        const midfieldersArray = selectPlayers(midfielders, 2);
         setMidfielders(filterPlayers(midfielders, midfieldersArray));
-        const forwardsArray = selectPlayers(forwards, 1);
         setForwards(filterPlayers(forwards, forwardsArray));
 
         const team = [...goalkeepersArray, ...defendersArray, ...midfieldersArray, ...forwardsArray];
