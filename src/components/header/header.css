@@ -1,0 +1,11 @@
+.header {
+    background-color: black;
+    font-size: 25px;
+}
+
+.header p {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 50px;
+    color: white;
+}

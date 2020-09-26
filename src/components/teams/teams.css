@@ -1,0 +1,34 @@
+.teamsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "tables teams";
+    margin-top: 70px;
+}
+
+.tables {
+    grid-area: "tables";
+    border-right: 1px solid black;
+}
+
+.teams {
+    grid-area: "teams";
+    border-left: 1px solid black;
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-template-areas: "control" "teamsTables";
+}
+
+.control {
+    grid-area: "control";
+}
+
+.teamsTables {
+    grid-area: "teamsTables";
+}
+
+.control,
+.teamsTables,
+.tables {
+    display: flex;
+    justify-content: center;
+}
