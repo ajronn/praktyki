@@ -19,7 +19,7 @@ export interface Player {
 
 const Main = () => {
     const [storage, setStorage] = useState([]);
-    const NUMBER_OF_TEAMS = 50;
+    const NUMBER_OF_TEAMS = 200;
 
     useEffect(() => {
         let players: Player[] = [];

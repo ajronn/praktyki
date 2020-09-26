@@ -26,8 +26,11 @@
     grid-area: "teamsTables";
 }
 
+.teamsTables table {
+    float: left;
+}
+
 .control,
-.teamsTables,
 .tables {
     display: flex;
     justify-content: center;
