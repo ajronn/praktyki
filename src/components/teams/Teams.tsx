@@ -124,10 +124,10 @@ const Teams = ({ storage }: Props) => {
     }
 
     const validate = (): boolean => {
-        if (goalkeepers.length < 1) return false;
-        if (defenders.length < 3) return false;
-        if (midfielders.length < 2) return false;
-        if (forwards.length < 1) return false;
+        if (goalkeepers.length < GOALKEEPERS_NUMBER) return false;
+        if (defenders.length < DEFENDERS_NUMBER) return false;
+        if (midfielders.length < MIDFIELDERS_NUMBER) return false;
+        if (forwards.length < FORWARDS_NUMBER) return false;
 
         return true;
     }
